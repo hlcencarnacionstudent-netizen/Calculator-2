@@ -1,0 +1,173 @@
+.App {
+  min-height: 100vh;
+  text-align: center;
+  background: #f1f1f1;
+  padding-top: 35px;
+  box-sizing: border-box;
+}
+
+/* HEADER */
+
+.Header {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1f1f1f;
+  margin-bottom: 25px;
+}
+
+/* CALCULATOR BODY */
+
+.Calculator {
+  width: 430px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+
+  background: #b5122b;
+  border: 4px solid #7d0b1c;
+  border-radius: 22px;
+
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.25),
+    inset 0 0 10px rgba(255, 255, 255, 0.12);
+}
+
+/* DISPLAY */
+
+.Display {
+  height: 85px;
+  margin-bottom: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  padding: 0 18px;
+  box-sizing: border-box;
+
+  background: #263238;
+  border: 4px solid #5b0714;
+  border-radius: 12px;
+
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: bold;
+
+  overflow: hidden;
+  white-space: nowrap;
+
+  box-shadow:
+    inset 0 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* KEYPAD */
+
+.Keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* BUTTONS */
+
+.Button {
+  height: 70px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #e6e6e6;
+  color: #222222;
+
+  font-size: 25px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 0 #a7a7a7,
+    0 5px 8px rgba(0, 0, 0, 0.2);
+
+  transition: 0.1s;
+}
+
+.Button:hover {
+  background: #ffffff;
+}
+
+.Button:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 #a7a7a7;
+}
+
+/* OPERATORS */
+
+.Operator {
+  background: #5e35b1;
+  color: white;
+  box-shadow: 0 4px 0 #39206f;
+}
+
+.Operator:hover {
+  background: #7045c5;
+}
+
+/* CLEAR */
+
+.Clear {
+  background: #ff4057;
+  color: white;
+  box-shadow: 0 4px 0 #a51e30;
+}
+
+.Clear:hover {
+  background: #ff6173;
+}
+
+/* EQUALS */
+
+.Equals {
+  background: #00a6d6;
+  color: white;
+  box-shadow: 0 4px 0 #006b8a;
+}
+
+.Equals:hover {
+  background: #12bce9;
+}
+
+/* NAME TAG */
+
+.NameTag {
+  margin-top: 20px;
+
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #8e1830;
+  border: 2px solid #6c0b20;
+  border-radius: 10px;
+
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .Calculator {
+    width: 90%;
+    max-width: 430px;
+  }
+
+  .Header {
+    font-size: 20px;
+  }
+
+}
