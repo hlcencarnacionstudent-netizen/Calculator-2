@@ -106,7 +106,7 @@ function App() {
     <div className="App">
 
       <div className="Header">
-        Calculator of Hurley Encarnacion - WMD3A
+        Calculator of Hurley Lawreese C. Encarnacion - WMD3A
       </div>
 
       <div className="Calculator">
