@@ -17,7 +17,7 @@
 /* CALCULATOR */
 
 .Calculator {
-  width: 430px;
+  width: 560px;
   margin: 0 auto;
   padding: 20px;
 
@@ -33,6 +33,7 @@
 /* DISPLAY */
 
 .Display {
+  width: 100%;
   height: 85px;
   margin-bottom: 20px;
   padding: 0 15px;
@@ -48,7 +49,7 @@
   border-radius: 12px;
 
   color: white;
-  font-size: 30px;
+  font-size: 27px;
   font-weight: bold;
 
   overflow: hidden;
@@ -168,11 +169,15 @@
 
 @media (max-width: 600px) {
   .Calculator {
-    width: 90%;
-    max-width: 430px;
+    width: 92%;
+    max-width: 560px;
   }
 
   .Header {
     font-size: 20px;
+  }
+
+  .Display {
+    font-size: 22px;
   }
 }
