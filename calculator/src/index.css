@@ -1,16 +1,6 @@
 :root {
-  --text: #000000;
-  --text-h: #1f1f1f;
-  --border: #d6d6d6;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-
-  color: var(--text);
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  color: #000000;
   background: #f1f1f1;
 
   font-synthesis: none;
@@ -23,16 +13,11 @@
   box-sizing: border-box;
 }
 
-html {
-  min-height: 100%;
-}
-
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
   background: #f1f1f1;
-  font-family: var(--sans);
 }
 
 #root {
@@ -43,30 +28,6 @@ body {
   text-align: center;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-}
-
 button {
   font-family: inherit;
-}
-
-@media (max-width: 600px) {
-  :root {
-    font-size: 16px;
-  }
-
-  h1 {
-    font-size: 36px;
-    margin: 20px 0;
-  }
 }

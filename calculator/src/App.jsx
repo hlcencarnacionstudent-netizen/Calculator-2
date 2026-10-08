@@ -29,8 +29,17 @@ function App() {
   const buttonClickHandler = (value) => {
 
     // CLEAR
-    if (value === 'CLR') {
+    if (value === 'C') {
       setDisplay('0');
+      setFirstNumber(null);
+      setOperator(null);
+      setWaitingForSecondNumber(false);
+      return;
+    }
+
+    // SURNAME BUTTON
+    if (value === 'ENCARNACION') {
+      setDisplay('Hurley Lawreese C. Encarnacion');
       setFirstNumber(null);
       setOperator(null);
       setWaitingForSecondNumber(false);
@@ -45,11 +54,12 @@ function App() {
       } else {
         setDisplay(display + value);
       }
+
       return;
     }
 
     // OPERATORS
-    if (['+', '-', 'x', '÷'].includes(value)) {
+    if (['+', '-', '*', '÷'].includes(value)) {
       setFirstNumber(Number(display));
       setOperator(value);
       setWaitingForSecondNumber(true);
@@ -74,7 +84,7 @@ function App() {
           result = firstNumber - secondNumber;
           break;
 
-        case 'x':
+        case '*':
           result = firstNumber * secondNumber;
           break;
 
@@ -85,6 +95,7 @@ function App() {
             setOperator(null);
             return;
           }
+
           result = firstNumber / secondNumber;
           break;
 
@@ -92,7 +103,6 @@ function App() {
           return;
       }
 
-      // Remove unnecessary decimal places
       result = Number(result.toFixed(8));
 
       setDisplay(String(result));
@@ -105,45 +115,56 @@ function App() {
   return (
     <div className="App">
 
+      {/* HEADER */}
       <div className="Header">
         Calculator of Hurley Lawreese C. Encarnacion - WMD3A
       </div>
 
+      {/* CALCULATOR */}
       <div className="Calculator">
 
+        {/* DISPLAY */}
         <CalcDisplay dispValue={display} />
 
+        {/* KEYPAD */}
         <div className="Keypad">
 
+          {/* ROW 1 */}
           <CalcButton buttonLabel={7} onClick={buttonClickHandler} />
           <CalcButton buttonLabel={8} onClick={buttonClickHandler} />
           <CalcButton buttonLabel={9} onClick={buttonClickHandler} />
+
           <CalcButton
             buttonLabel="÷"
             onClick={buttonClickHandler}
             className="Operator"
           />
 
+          {/* ROW 2 */}
           <CalcButton buttonLabel={4} onClick={buttonClickHandler} />
           <CalcButton buttonLabel={5} onClick={buttonClickHandler} />
           <CalcButton buttonLabel={6} onClick={buttonClickHandler} />
+
           <CalcButton
-            buttonLabel="x"
+            buttonLabel="*"
             onClick={buttonClickHandler}
             className="Operator"
           />
 
+          {/* ROW 3 */}
           <CalcButton buttonLabel={1} onClick={buttonClickHandler} />
           <CalcButton buttonLabel={2} onClick={buttonClickHandler} />
           <CalcButton buttonLabel={3} onClick={buttonClickHandler} />
+
           <CalcButton
             buttonLabel="-"
             onClick={buttonClickHandler}
             className="Operator"
           />
 
+          {/* ROW 4 */}
           <CalcButton
-            buttonLabel="CLR"
+            buttonLabel="C"
             onClick={buttonClickHandler}
             className="Clear"
           />
@@ -164,12 +185,15 @@ function App() {
 
         </div>
 
-        <div className="NameTag">
+        {/* SURNAME BUTTON */}
+        <button
+          className="SurnameButton"
+          onClick={() => buttonClickHandler('ENCARNACION')}
+        >
           ENCARNACION
-        </div>
+        </button>
 
       </div>
-
     </div>
   );
 }
